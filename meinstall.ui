@@ -47,7 +47,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>9</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="Step_0">
       <layout class="QGridLayout">
@@ -114,20 +114,15 @@
              <bool>true</bool>
             </property>
             <property name="html">
-             <string>&lt;p&gt;antiX is an independent linux distribution based on Debian Testing and MEPIS Linux.&lt;/p&gt; &lt;p&gt;antiX uses some components from MEPIS Linux which are released under an Apache free license. Some MEPIS components have been modified for antiX. Please be aware of the MEPIS copyright. The MEPIS product names and the MEPIS logos are trademarks of MEPIS LLC. Commercial use of MEPIS products and/or marks is prohibited unless permission is obtained in writing.&lt;/p&gt; &lt;p&gt;Enjoy using antiX.&lt;/p&gt;</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QCheckBox" name="agreeCheckBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="text">
-             <string>I have read the Terms</string>
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;antiX is an independent linux distribution based on Debian Testing&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;antiX uses some components from MEPIS Linux which are released under an Apache free license. Some MEPIS components have been modified for antiX.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Enjoy using antiX.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -570,6 +565,26 @@
             </item>
             <item>
              <property name="text">
+              <string>ext2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>jfs</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>xfs</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>btrfs</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
               <string>reiserfs</string>
              </property>
             </item>
@@ -820,28 +835,6 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="3">
-           <widget class="QRadioButton" name="grubRootButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>80</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>root</string>
-            </property>
-            <property name="checked">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
           <item row="1" column="1">
            <widget class="QLabel" name="grubInsLabel">
             <property name="sizePolicy">
@@ -934,22 +927,25 @@
             </property>
            </spacer>
           </item>
-          <item row="3" column="1" colspan="3">
-           <widget class="QCheckBox" name="initrdCheck">
+          <item row="1" column="3">
+           <widget class="QRadioButton" name="grubRootButton">
             <property name="sizePolicy">
              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="text">
-             <string>use initrd (recommended)</string>
+            <property name="minimumSize">
+             <size>
+              <width>80</width>
+              <height>0</height>
+             </size>
             </property>
-            <property name="shortcut">
-             <string>Alt+X</string>
+            <property name="text">
+             <string>root</string>
             </property>
             <property name="checked">
-             <bool>true</bool>
+             <bool>false</bool>
             </property>
            </widget>
           </item>
@@ -1063,7 +1059,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>antiXgrp</string>
+             <string>WORKGROUP</string>
             </property>
            </widget>
           </item>
@@ -1137,7 +1133,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>antiX1</string>
+             <string>antix1</string>
             </property>
            </widget>
           </item>
@@ -1220,7 +1216,7 @@
           <item row="0" column="0" colspan="2">
            <widget class="QCheckBox" name="gmtCheckBox">
             <property name="text">
-             <string>System clock uses GMT</string>
+             <string>System clock uses LOCAL</string>
             </property>
            </widget>
           </item>
@@ -1319,7 +1315,7 @@
          </layout>
         </widget>
        </item>
-      <item row="2" column="0">
+       <item row="2" column="0">
         <widget class="QGroupBox" name="tzBox">
          <property name="sizePolicy">
           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Minimum">
@@ -1362,7 +1358,7 @@
         </widget>
        </item>
       </layout>
-     </widget> 
+     </widget>
      <widget class="QWidget" name="Step_8">
       <layout class="QGridLayout">
        <property name="margin">
@@ -1371,19 +1367,6 @@
        <property name="spacing">
         <number>6</number>
        </property>
-       <item row="3" column="0">
-        <spacer>
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item row="1" column="0">
         <widget class="QGroupBox" name="rootPasswordBox">
          <property name="sizePolicy">
@@ -1469,6 +1452,19 @@
          </layout>
         </widget>
        </item>
+       <item row="4" column="0">
+        <spacer>
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item row="0" column="0">
         <widget class="QGroupBox" name="userBox">
          <property name="sizePolicy">
@@ -1528,6 +1524,9 @@
              </sizepolicy>
             </property>
             <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
              <string>username</string>
             </property>
            </widget>
@@ -1581,6 +1580,13 @@
            </widget>
           </item>
          </layout>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="autologinCheckBox">
+         <property name="text">
+          <string>Autologin</string>
+         </property>
         </widget>
        </item>
        <item row="2" column="0">
@@ -1654,7 +1660,12 @@
              <bool>true</bool>
             </property>
             <property name="html">
-             <string>&lt;p&gt;&lt;b&gt;Support antiX&lt;/b&gt;&lt;br/&gt;antiX is supported by people like you. Some help others at the support forum - http://antix.freeforums.org, or translate help files into different languages, or make suggestions, write documentation, or help test new software.&lt;/p&gt;</string>
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Support antiX&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;antiX is supported by people like you. Some help others at the support forum - http://antix.freeforums.org, or translate help files into different languages, or make suggestions, write documentation, or help test new software.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
            </widget>
           </item>
@@ -1707,7 +1718,6 @@
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
  <tabstops>
   <tabstop>copyrightBrowser</tabstop>
-  <tabstop>agreeCheckBox</tabstop>
   <tabstop>backButton</tabstop>
   <tabstop>nextButton</tabstop>
   <tabstop>diskCombo</tabstop>
@@ -1725,9 +1735,7 @@
   <tabstop>tipsEdit</tabstop>
   <tabstop>grubCheckBox</tabstop>
   <tabstop>grubMbrButton</tabstop>
-  <tabstop>grubRootButton</tabstop>
   <tabstop>grubBootCombo</tabstop>
-  <tabstop>initrdCheck</tabstop>
   <tabstop>csView</tabstop>
   <tabstop>computerNameEdit</tabstop>
   <tabstop>computerDomainEdit</tabstop>
@@ -1741,7 +1749,7 @@
   <tabstop>userPasswordEdit2</tabstop>
   <tabstop>rootPasswordEdit</tabstop>
   <tabstop>rootPasswordEdit2</tabstop>
-  <tabstop>passwordCheckBox</tabstop>
+  <tabstop>autologinCheckBox</tabstop>
   <tabstop>remindersBrowser</tabstop>
  </tabstops>
  <resources/>
@@ -1797,22 +1805,6 @@
   <connection>
    <sender>grubCheckBox</sender>
    <signal>toggled(bool)</signal>
-   <receiver>grubRootButton</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>154</x>
-     <y>55</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>338</x>
-     <y>88</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>grubCheckBox</sender>
-   <signal>toggled(bool)</signal>
    <receiver>grubMbrButton</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
@@ -1823,22 +1815,6 @@
     <hint type="destinationlabel">
      <x>262</x>
      <y>82</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>grubCheckBox</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>initrdCheck</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>187</x>
-     <y>55</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>172</x>
-     <y>145</y>
     </hint>
    </hints>
   </connection>

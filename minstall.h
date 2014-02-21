@@ -33,30 +33,21 @@ class MInstall : public QWidget, public Ui::MeInstall {
   protected:
     QProcess *proc;
     QTimer *timer;
-    QTreeWidgetItem *webminItem;
+    QTreeWidgetItem *wicdItem;
     QTreeWidgetItem *sshItem;
-    QTreeWidgetItem *cupsItem;
-    QTreeWidgetItem *mysqlItem;
+    QTreeWidgetItem *transmissionItem;
+    QTreeWidgetItem *bluetoothItem;
     QTreeWidgetItem *cpufreqItem;
-    QTreeWidgetItem *laptopItem;
+    QTreeWidgetItem *smartmontoolsItem;
+    QTreeWidgetItem *acpidItem;
+    QTreeWidgetItem *acpisupportItem;
+    QTreeWidgetItem *acpifakekeyItem;
     QTreeWidgetItem *dbusItem;
     QTreeWidgetItem *cronItem;
-    QTreeWidgetItem *gpmItem;
-    QTreeWidgetItem *sudoItem;
-    QTreeWidgetItem *postfixItem;
-    QTreeWidgetItem *proftpItem;
     QTreeWidgetItem *rsyncItem;
-    QTreeWidgetItem *bindItem;
-    QTreeWidgetItem *dhcpItem;
-    QTreeWidgetItem *dansItem;
-    QTreeWidgetItem *shorewallItem;
-    QTreeWidgetItem *snortItem;
-    QTreeWidgetItem *squidItem;
-    
-    QTreeWidgetItem *guarddogItem;
-    QTreeWidgetItem *wicdItem;
-    QTreeWidgetItem *isdnItem;
-    QTreeWidgetItem *bluezItem;
+    QTreeWidgetItem *gpmItem;
+    QTreeWidgetItem *sanedItem;
+    QTreeWidgetItem *cupsItem;
 
     QDialog *mmn;
 
@@ -100,6 +91,7 @@ class MInstall : public QWidget, public Ui::MeInstall {
     bool removeKernel();
     bool makeGrub(int rootdev, QString rootpart, const char *rootmnt, bool initrd);
     void updatePartitionWidgets();
+    bool checkDisk();
 
     void gotoPage(int next);
     void pageDisplayed(int next);
