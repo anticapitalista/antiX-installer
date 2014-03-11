@@ -666,7 +666,7 @@ bool MInstall::makeDefaultPartitions() {
     return false;
   }
   system("sleep 1");
-  system("/usr/sbin/buildfstab -r");
+  //system("/usr/sbin/buildfstab -r");
   system("/sbin/swapon -a 2>&1");
 
   updateStatus(tr("Formatting root partition"), 3);
@@ -887,7 +887,7 @@ bool MInstall::makeChosenPartitions() {
   }
   // mount all swaps
   system("sleep 1");
-  system("/usr/sbin/buildfstab -r");
+  //system("/usr/sbin/buildfstab -r");
   system("/sbin/swapon -a 2>&1");
 
   return true;
@@ -1041,6 +1041,8 @@ bool MInstall::installLoader() {
   system("mount -o bind /proc /mnt/antiX/proc");
 
   system("chroot /mnt/antiX update-grub");
+  system("chroot /mnt/antiX make-fstab --swap-only");
+  system("chroot /mnt/antiX dev2uuid_fstab");
 
   system("umount /mnt/antiX/proc");
   system("umount /mnt/antiX/sys");
@@ -1381,7 +1383,11 @@ void MInstall::setLocale() {
   if (kb == "uk") {
     kb = "gb";
   }
-  cmd = QString("sed -i 's/.*us/XKBLAYOUT=\"%1,us\/g' /mnt/antiX/etc/default/keyboard").arg(kb);
+  if (kb == "us") {
+  cmd = QString("sed -i 's/.*us/XKBLAYOUT=\"%1/g' /mnt/antiX/etc/default/keyboard").arg(kb);
+  } else {
+  cmd = QString("sed -i 's/.*us/XKBLAYOUT=\"%1,us/g' /mnt/antiX/etc/default/keyboard").arg(kb);
+  }
   system(cmd.toAscii());
 
   //locale
@@ -1627,6 +1633,7 @@ void MInstall::stopInstall() {
         "Do you want to reboot now?"),
         tr("Yes"), tr("No"));
     if (ans == 0) {
+      system("/bin/rm -rf /mnt/antiX/mnt/antiX");
       system("/bin/umount -l /mnt/antiX/home >/dev/null 2>&1");
       system("/bin/umount -l /mnt/antiX >/dev/null 2>&1");
       system("/usr/local/bin/persist-config --shutdown --command reboot");
@@ -1641,6 +1648,7 @@ void MInstall::stopInstall() {
       return;
     }
   }
+  system("/bin/rm -rf /mnt/antiX/mnt/antiX");
   system("/bin/umount -l /mnt/antiX/home >/dev/null 2>&1");
   system("/bin/umount -l /mnt/antiX >/dev/null 2>&1");
 }
@@ -1731,7 +1739,7 @@ void MInstall::pageDisplayed(int next) {
         if (!makeDefaultPartitions()) {
           // failed
           system("sleep 1");
-          system("/usr/sbin/buildfstab -r");
+          //system("/usr/sbin/buildfstab -r");
           system("/sbin/swapon -a 2>&1");
           nextButton->setEnabled(true);
           goBack(tr("Failed to create required partitions.\nReturning to Step 1."));
@@ -1740,7 +1748,7 @@ void MInstall::pageDisplayed(int next) {
       } else {
         if (!makeChosenPartitions()) {
           system("sleep 1");
-          system("/usr/sbin/buildfstab -r");
+          //system("/usr/sbin/buildfstab -r");
           system("/sbin/swapon -a 2>&1");
           nextButton->setEnabled(true);
           goBack(tr("Failed to prepare chosen partitions.\nReturning to Step 1."));
@@ -1748,7 +1756,7 @@ void MInstall::pageDisplayed(int next) {
         }
       }
       system("sleep 1");
-      system("/usr/sbin/buildfstab -r");
+      //system("/usr/sbin/buildfstab -r");
       system("/sbin/swapon -a 2>&1");
       installLinux();
       break;
@@ -1947,7 +1955,7 @@ void MInstall::on_abortInstallButton_clicked() {
 void MInstall::on_qtpartedButton_clicked() {
   system("/sbin/swapoff -a 2>&1");
   system("/usr/sbin/gparted");
-  system("/usr/sbin/buildfstab -r");
+  //system("/usr/sbin/buildfstab -r");
   system("/sbin/swapon -a 2>&1");
   this->updatePartitionWidgets();
   on_diskCombo_activated();
@@ -2184,10 +2192,10 @@ void MInstall::copyDone(int exitCode, QProcess::ExitStatus exitStatus) {
         sprintf(line, "%s / auto defaults,noatime 1 1\n", rootdev);
       }
       fputs(line, fp);
-      if (strcmp(swapdev, "/dev/none") != 0) {
-        sprintf(line, "%s swap swap sw,pri=1 0 0\n", swapdev);
-        fputs(line, fp);
-      }
+      //if (strcmp(swapdev, "/dev/none") != 0) {
+      //  sprintf(line, "%s swap swap sw,pri=1 0 0\n", swapdev);
+      //  fputs(line, fp);
+      //}
       fputs("proc /proc proc defaults 0 0\n", fp);
       fputs("devpts /dev/pts devpts mode=0622 0 0\n", fp);
       if (strcmp(homedev, "/dev/root") != 0) {
